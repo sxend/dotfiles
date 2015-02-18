@@ -9,3 +9,5 @@ git config --global alias.br 'branch'
 curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
 source ~/.nvm/nvm.sh
 nvm install iojs
+
+sudo apt-get -y install docker.io
