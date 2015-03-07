@@ -51,4 +51,22 @@ unzip gradle-2.3-bin.zip
 mv gradle-2.3 $TOOLS_DIR/gradle
 rm gradle-2.3-bin.zip
 
+# Ricty install
+mkdir -p $HOME/.fonts/migu-1m
+sudo apt-get install -y fontforge fonts-inconsolata
+wget http://jaist.dl.sourceforge.jp/mix-mplus-ipa/59022/migu-1m-20130617.zip
+unzip migu-1m-20130617.zip
+mv migu-1m-20130617/*.ttf $HOME/.fonts/migu-1m
+fc-cache -vf
+rm -rf migu-1m-20130617.zip
+rm -rf migu-1m-20130617
+
+mkdir -p $HOME/.fonts/Ricty
+git clone -b 3.2.4 git@github.com:yascentur/Ricty.git
+cd Ricty && ./ricty_generator.sh auto
+cp -f Ricty*.ttf $HOME/.fonts/Ricty
+cd ..
+fc-cache -vf
+rm -rf Ricty/
+
 cp .zshrc $HOME/.zshrc
