@@ -1,6 +1,6 @@
 PATH_ARR+=($PATH)
 
-alias ll='ls -al'
+alias ll='ls -alF'
 
 PATH_ARR+=("$HOME/.bin/sbt/bin")
 
