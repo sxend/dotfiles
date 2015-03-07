@@ -15,13 +15,16 @@ setopt share_history
 setopt auto_pushd
 setopt pushd_ignore_dups
 
+TOOLS_DIR=$HOME/.tools
+
 # alias
 alias ll='ls -alF --color=auto'
 
 # prepare PATH
 PATH_ARR+=($PATH)
 
-PATH_ARR+=("$HOME/.bin/sbt/bin")
+PATH_ARR+=("$TOOLS_DIR/sbt/bin")
+PATH_ARR+=("$TOOLS_DIR/idea/bin")
 
 export PATH="$(IFS=:; echo "${PATH_ARR[*]}")"
 
