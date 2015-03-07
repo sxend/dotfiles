@@ -5,6 +5,8 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 mkdir -p $HOME/.tools
+TOOLS_DIR=$HOME/.tools
+
 mkdir -p $HOME/downloads
 
 # install basic packages
@@ -36,7 +38,12 @@ sudo apt-get -y install oracle-java8-installer
 
 wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.7/sbt-0.13.7.tgz
 tar xzf sbt-0.13.7.tgz
-mv sbt $HOME/.tools/sbt
+mv sbt $TOOLS_DIR/sbt
 rm sbt-0.13.7.tgz
+
+wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
+unzip gradle-2.3-bin.zip
+mv gradle-2.3 $TOOLS_DIR/gradle
+rm gradle-2.3-bin.zip
 
 cp .zshrc $HOME/.zshrc

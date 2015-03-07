@@ -25,6 +25,7 @@ PATH_ARR+=($PATH)
 
 PATH_ARR+=("$TOOLS_DIR/sbt/bin")
 PATH_ARR+=("$TOOLS_DIR/idea/bin")
+PATH_ARR+=("$TOOLS_DIR/gradle/bin")
 
 export PATH="$(IFS=:; echo "${PATH_ARR[*]}")"
 
