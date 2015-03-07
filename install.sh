@@ -1,13 +1,23 @@
 #!/bin/bash
 
-sudo apt-get -y install curl vim sublime-text zsh
+# update apt
+sudo apt-get -y update
+sudo apt-get -y upgrade
 
+# install basic packages
+sudo apt-get -y install wget curl vim zsh git
+chsh -s `which zsh`
+cp .zshrc $HOME/.zshrc
+
+# git alias
 git config --global alias.co checkout
 git config --global alias.st 'status'
 git config --global alias.br 'branch'
 
+# install nvm
 curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
-source ~/.nvm/nvm.sh
-nvm install iojs
+echo 'source $HOME/.nvm/nvm.sh' >> ~/.zshrc
 
-sudo apt-get -y install docker.io
+sudo apt-get -y install docker.io apparmor
+
+
