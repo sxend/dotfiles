@@ -36,6 +36,11 @@ sudo apt-get -y update
 sudo apt-get -y install oracle-java7-installer
 sudo apt-get -y install oracle-java8-installer
 
+wget http://mirror.sdunix.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
+unzip apache-maven-3.2.5-bin.zip
+mv apache-maven-3.2.5 $TOOLS_DIR/maven
+rm apache-maven-3.2.5-bin.zip
+
 wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.7/sbt-0.13.7.tgz
 tar xzf sbt-0.13.7.tgz
 mv sbt $TOOLS_DIR/sbt
