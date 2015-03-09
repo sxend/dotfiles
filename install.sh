@@ -16,6 +16,8 @@ mkdir -p $HOME/downloads
 mkdir -p $HOME/usr/local
 mkdir -p $HOME/var/log
 
+cd $HOME/tmp
+
 # update apt
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get -y update
@@ -28,6 +30,12 @@ sudo apt-get -y install wget vim zsh git unzip
 [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
 
 # clone dotfiles
+if [ -e $HOME/share/dotfiles ]; then
+  git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
+else
+  cd $HOME/share/dotfiles && git pull origin master && cd $HOME/tmp 
+fi
+
 git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 ln -s -f $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
 ln -s -f $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
@@ -45,8 +53,6 @@ curl --insecure https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install
 
 # install docker
 sudo apt-get -y install docker.io apparmor
-
-cd $HOME/tmp
 
 local MVN_DIR=$HOME/usr/local/maven
 mkdir -p ${MVN_DIR}
