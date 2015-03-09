@@ -17,7 +17,7 @@ mkdir -p $HOME/usr/local
 mkdir -p $HOME/var/log
 
 # install basic packages
-sudo apt-get -y install wget curl vim zsh git
+sudo apt-get -y install wget vim zsh git
 
 [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
 
