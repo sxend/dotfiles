@@ -3,8 +3,7 @@ if has('vim_starting')
    set runtimepath+=~/.vim/bundle/neobundle.vim/
  endif
 
- call neobundle#rc(expand('~/.vim/bundle/'))
-
+ call neobundle#begin(expand('~/.vim/bundle/'))
  " Let NeoBundle manage NeoBundle
  NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -29,8 +28,6 @@ if has('vim_starting')
  " gist repos
  " NeoBundle 'gist:Shougo/656148', {'name':'everything.vim','script_type':'plugin'}
  " Non git repos
- NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
- NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
  " ...
  
  NeoBundle 'jiangmiao/simple-javascript-indenter'
@@ -38,10 +35,6 @@ if has('vim_starting')
  NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
  NeoBundle 'Shougo/neocomplcache.vim'
-
- NeoBundle 'teramako/jscomplete-vim'
-
- NeoBundle 'altercation/vim-colors-solarized'
 
  " ...
 
@@ -155,6 +148,4 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 set t_Co=256
-let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
