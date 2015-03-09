@@ -29,9 +29,9 @@ sudo apt-get -y install wget vim zsh git unzip
 
 # clone dotfiles
 git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
-ln -s $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
-ln -s $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
-ln -s $HOME/share/dotfiles/dot.gitconfig $HOME/.gitconfig
+ln -s -f $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
+ln -s -f $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
+ln -s -f $HOME/share/dotfiles/dot.gitconfig $HOME/.gitconfig
 
 # tig (git client) install
 sudo apt-get -y install tig
@@ -53,7 +53,7 @@ mkdir -p ${MVN_DIR}
 wget http://mirror.sdunix.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
 unzip apache-maven-3.2.5-bin.zip
 mv apache-maven-3.2.5 ${MVN_DIR}/3.2.5
-ln -s ${MVN_DIR}/3.2.5/bin/mvn $HOME/bin/mvn
+ln -s -f ${MVN_DIR}/3.2.5/bin/mvn $HOME/bin/mvn
 rm apache-maven-3.2.5-bin.zip
 
 local SBT_DIR=$HOME/usr/local/sbt
@@ -61,7 +61,7 @@ mkdir -p ${SBT_DIR}
 wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.7/sbt-0.13.7.tgz
 tar xzf sbt-0.13.7.tgz
 mv sbt ${SBT_DIR}/0.13.7
-ln -s ${SBT_DIR}/0.13.7/bin/sbt $HOME/bin/sbt
+ln -s -f ${SBT_DIR}/0.13.7/bin/sbt $HOME/bin/sbt
 rm sbt-0.13.7.tgz
 
 local GRADLE_DIR=$HOME/usr/local/gradle
@@ -69,7 +69,7 @@ mkdir -p ${GRADLE_DIR}
 wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
 unzip gradle-2.3-bin.zip
 mv gradle-2.3 ${GRADLE_DIR}/2.3
-ln -s ${GRADLE_DIR}/2.3/bin/gradle $HOME/bin/gradle
+ln -s -f ${GRADLE_DIR}/2.3/bin/gradle $HOME/bin/gradle
 rm gradle-2.3-bin.zip
 
 # Ricty install
