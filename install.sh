@@ -41,7 +41,7 @@ sudo apt-get -y install oracle-java7-installer
 sudo apt-get -y install oracle-java8-installer
 
 # install nvm
-curl --insecure https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
+curl --insecure https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
 
 # install docker
 sudo apt-get -y install docker.io apparmor
