@@ -42,7 +42,5 @@ alias ll='ls -alF --color=auto'
 
 # prepare PATH
 EXPORTS+=($PATH)
-# EXPORTS+=("$HOME/usr/local/maven/bin")
-# EXPORTS+=("$HOME/usr/local/sbt/bin")
-# EXPORTS+=("$HOME/usr/local/gradle/bin")
+EXPORTS+=("$HOME/bin")
 export PATH="$(IFS=:; echo "${EXPORTS[*]}")"
