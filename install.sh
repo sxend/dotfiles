@@ -29,6 +29,8 @@ sudo apt-get -y install wget vim zsh git unzip
 
 # clone dotfiles
 git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
+ln -s $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
+ln -s $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
 
 # git configuration
 git config --global alias.co checkout
@@ -90,7 +92,6 @@ cd Ricty && ./ricty_generator.sh auto && cp -f Ricty*.ttf $HOME/.fonts/Ricty && 
 fc-cache -vf
 rm -rf Ricty/
 
-ln -s $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
 }
 
 do_install
