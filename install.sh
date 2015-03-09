@@ -36,8 +36,8 @@ else
   git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 fi
 
-mkdir -p ~.vim/bundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+mkdir -p $HOME/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 
 ln -s -f $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
 ln -s -f $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
