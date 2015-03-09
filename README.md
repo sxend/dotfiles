@@ -2,4 +2,4 @@
 
 ## run command:
 
-    curl https://raw.githubusercontent.com/sxend/dotfiles/master/install.sh | bash
+    curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/master/install.sh | bash
