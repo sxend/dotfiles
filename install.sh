@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 do_install() {
 # update apt
 sudo apt-get -y update
@@ -21,7 +23,7 @@ sudo apt-get -y install wget vim zsh git
 
 [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
 
-git clone git@github.com:sxend/dotfiles.git $HOME/share/dotfiles
+git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 
 # git alias
 git config --global alias.co checkout
@@ -73,7 +75,7 @@ rm -rf migu-1m-20130617.zip
 rm -rf migu-1m-20130617
 
 mkdir -p $HOME/.fonts/Ricty
-git clone -b 3.2.4 git@github.com:yascentur/Ricty.git
+git clone -b 3.2.4 https://github.com/yascentur/Ricty.git
 cd Ricty && ./ricty_generator.sh auto && cp -f Ricty*.ttf $HOME/.fonts/Ricty && cd $HOME/tmp
 fc-cache -vf
 rm -rf Ricty/
