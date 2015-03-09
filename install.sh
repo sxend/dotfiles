@@ -36,7 +36,6 @@ else
   git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 fi
 
-git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 ln -s -f $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
 ln -s -f $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
 ln -s -f $HOME/share/dotfiles/dot.gitconfig $HOME/.gitconfig
