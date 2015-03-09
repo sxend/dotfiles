@@ -2,20 +2,23 @@
 
 # update apt
 sudo apt-get -y update
-sudo apt-get -y upgrade
+# sudo apt-get -y upgrade
 
-mkdir -p $HOME/.tools
-TOOLS_DIR=$HOME/.tools
-
+mkdir -p $HOME/bin
+mkdir -p $HOME/workspace
+mkdir -p $HOME/share
+mkdir -p $HOME/tmp
+mkdir -p $HOME/usr
+mkdir -p $HOME/var
 mkdir -p $HOME/downloads
+
+mkdir -p $HOME/usr/local
+mkdir -p $HOME/var/log
 
 # install basic packages
 sudo apt-get -y install wget curl vim zsh git
-ZSH_INSTALLED=$(cat /etc/passwd| grep `whoami` | grep zsh | wc -l)
-if [ ${ZSH_INSTALLED} -eq 0 ]
-	then
-	chsh -s `which zsh`
-fi
+
+[ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login" && exit 0
 
 # git alias
 git config --global alias.co checkout
@@ -38,18 +41,21 @@ sudo apt-get -y install oracle-java8-installer
 
 wget http://mirror.sdunix.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
 unzip apache-maven-3.2.5-bin.zip
-mv apache-maven-3.2.5 $TOOLS_DIR/maven
+mv apache-maven-3.2.5 $HOME/usr/local/maven
 rm apache-maven-3.2.5-bin.zip
+echo 'add PATH $HOME/usr/local/maven'
 
 wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.7/sbt-0.13.7.tgz
 tar xzf sbt-0.13.7.tgz
-mv sbt $TOOLS_DIR/sbt
+mv sbt $HOME/usr/local/sbt
 rm sbt-0.13.7.tgz
+echo 'add PATH $HOME/usr/local/sbt'
 
 wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
 unzip gradle-2.3-bin.zip
-mv gradle-2.3 $TOOLS_DIR/gradle
+mv gradle-2.3 $HOME/usr/local/gradle
 rm gradle-2.3-bin.zip
+echo 'add PATH $HOME/usr/local/gradle'
 
 # Ricty install
 mkdir -p $HOME/.fonts/migu-1m
