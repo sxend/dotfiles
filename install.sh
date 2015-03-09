@@ -37,7 +37,12 @@ else
 fi
 
 mkdir -p $HOME/.vim/bundle
-git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+if [ -e $HOME/.vim/bundle/neobundle.vim ]; then
+  echo "bundle installed"
+else
+  git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+fi
+
 
 ln -s -f $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
 ln -s -f $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
