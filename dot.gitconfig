@@ -1,0 +1,11 @@
+[user]
+	name = sxend
+	email = arimitsu.k+github@gmail.com
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	st = status
+	br = branch
+[core]
+	editor = vim -c \"set fenc=utf-8\"

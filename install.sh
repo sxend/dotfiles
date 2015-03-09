@@ -31,13 +31,9 @@ sudo apt-get -y install wget vim zsh git unzip
 git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 ln -s $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
 ln -s $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
+ln -s $HOME/share/dotfiles/dot.gitconfig $HOME/.gitconfig
 
-# git configuration
-git config --global alias.co checkout
-git config --global alias.st 'status'
-git config --global alias.br 'branch'
-git config --global user.name sxend
-git config --global user.email arimitsu.k+github@gmail.com
+# tig (git client) install
 sudo apt-get -y install tig
 
 # install oracle jdk
