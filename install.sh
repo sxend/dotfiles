@@ -31,9 +31,9 @@ sudo apt-get -y install wget vim zsh git unzip
 
 # clone dotfiles
 if [ -e $HOME/share/dotfiles ]; then
-  git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
-else
   cd $HOME/share/dotfiles && git pull origin master && cd $HOME/tmp 
+else
+  git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 fi
 
 git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
