@@ -1,8 +1,6 @@
 machine:
   services:
     - docker
-deployment:
-  check:
-    branch: master
-    commands:
-      - docker run -it sxend/ubuntu14.04:latest /bin/bash -c 'curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/master/install.sh | bash'
+test:
+  override:
+    - docker run -it sxend/ubuntu14.04:latest /bin/bash -c 'curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/master/install.sh | bash'
