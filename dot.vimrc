@@ -45,6 +45,7 @@ if has('vim_starting')
  " :NeoBundleInstall(!)    - install(update) bundles
  " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
+ call neobundle#end()
  " Installation check.
  NeoBundleCheck
 
