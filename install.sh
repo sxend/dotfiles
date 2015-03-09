@@ -1,5 +1,6 @@
 #!/bin/bash
 
+do_install() {
 # update apt
 sudo apt-get -y update
 # sudo apt-get -y upgrade
@@ -18,7 +19,9 @@ mkdir -p $HOME/var/log
 # install basic packages
 sudo apt-get -y install wget curl vim zsh git
 
-[ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login" && exit 0
+[ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
+
+git clone git@github.com:sxend/dotfiles.git $HOME/share/dotfiles
 
 # git alias
 git config --global alias.co checkout
@@ -38,6 +41,8 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get -y update
 sudo apt-get -y install oracle-java7-installer
 sudo apt-get -y install oracle-java8-installer
+
+cd $HOME/tmp
 
 wget http://mirror.sdunix.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
 unzip apache-maven-3.2.5-bin.zip
@@ -69,10 +74,11 @@ rm -rf migu-1m-20130617
 
 mkdir -p $HOME/.fonts/Ricty
 git clone -b 3.2.4 git@github.com:yascentur/Ricty.git
-cd Ricty && ./ricty_generator.sh auto
-cp -f Ricty*.ttf $HOME/.fonts/Ricty
-cd ..
+cd Ricty && ./ricty_generator.sh auto && cp -f Ricty*.ttf $HOME/.fonts/Ricty && cd $HOME/tmp
 fc-cache -vf
 rm -rf Ricty/
 
-cp .zshrc $HOME/.zshrc
+ln -s $HOME/.zshrc $HOME/share/dotfiles/dot.zshrc
+}
+
+do_install
