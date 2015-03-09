@@ -3,10 +3,8 @@
 set -e
 
 do_install() {
-# update apt
-sudo apt-get -y update
-# sudo apt-get -y upgrade
 
+# create home/dirs
 mkdir -p $HOME/bin
 mkdir -p $HOME/workspace
 mkdir -p $HOME/share
@@ -18,31 +16,37 @@ mkdir -p $HOME/downloads
 mkdir -p $HOME/usr/local
 mkdir -p $HOME/var/log
 
-# install basic packages
-sudo apt-get -y install wget vim zsh git
+# update apt
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get -y update
+# sudo apt-get -y upgrade
 
+# install basic packages
+sudo apt-get -y install wget vim zsh git unzip
+
+# change login shell
 [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
 
+# clone dotfiles
 git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 
-# git alias
+# git configuration
 git config --global alias.co checkout
 git config --global alias.st 'status'
 git config --global alias.br 'branch'
 git config --global user.name sxend
 git config --global user.email arimitsu.k+github@gmail.com
-
 sudo apt-get -y install tig
+
+# install oracle jdk
+sudo apt-get -y install oracle-java7-installer
+sudo apt-get -y install oracle-java8-installer
 
 # install nvm
 curl https://raw.githubusercontent.com/creationix/nvm/v0.23.3/install.sh | bash
 
+# install docker
 sudo apt-get -y install docker.io apparmor
-
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get -y update
-sudo apt-get -y install oracle-java7-installer
-sudo apt-get -y install oracle-java8-installer
 
 cd $HOME/tmp
 
