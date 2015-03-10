@@ -38,7 +38,7 @@ fi
 
 mkdir -p $HOME/.vim/bundle
 if [ -e $HOME/.vim/bundle/neobundle.vim ]; then
-  echo "bundle installed"
+  cd $HOME/.vim/bundle/neobundle.vim && git pull origin master && cd $HOME/tmp
 else
   git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 fi
@@ -52,8 +52,8 @@ ln -s -f $HOME/share/dotfiles/dot.gitconfig $HOME/.gitconfig
 sudo apt-get -y install tig
 
 # install oracle jdk
-sudo apt-get -y install oracle-java7-installer
-sudo apt-get -y install oracle-java8-installer
+# sudo apt-get -y install oracle-java7-installer
+# sudo apt-get -y install oracle-java8-installer
 
 # install nvm
 curl --insecure https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
