@@ -50,7 +50,7 @@ if has('vim_starting')
  NeoBundleCheck
 
  set number "行番号を表示する
- set title "編集中のファイル名を表示
+ set notitle
  set showmatch "括弧入力時の対応する括弧を表示
  syntax on "コードの色分け
  set tabstop=2 "インデントをスペース2つ分に設定
