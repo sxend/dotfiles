@@ -44,6 +44,7 @@ fi
 
 
 ln -s -f $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
+ln -s -f $HOME/share/dotfiles/dot.zshrc.include $HOME/.zshrc.include
 ln -s -f $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
 ln -s -f $HOME/share/dotfiles/dot.gitconfig $HOME/.gitconfig
 

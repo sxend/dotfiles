@@ -44,3 +44,5 @@ alias ll='ls -alF --color=auto'
 EXPORTS+=($PATH)
 EXPORTS+=("$HOME/bin")
 export PATH="$(IFS=:; echo "${EXPORTS[*]}")"
+
+source $HOME/.zshrc.include
