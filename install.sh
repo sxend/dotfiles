@@ -9,11 +9,10 @@ mkdir -p $HOME/bin
 mkdir -p $HOME/workspace
 mkdir -p $HOME/share
 mkdir -p $HOME/tmp
-mkdir -p $HOME/usr
+mkdir -p $HOME/opt
 mkdir -p $HOME/var
 mkdir -p $HOME/downloads
 
-mkdir -p $HOME/usr/local
 mkdir -p $HOME/var/log
 
 cd $HOME/tmp
@@ -61,7 +60,7 @@ curl --insecure https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install
 # install docker
 sudo apt-get -y install docker.io apparmor
 
-local MVN_DIR=$HOME/usr/local/maven
+local MVN_DIR=$HOME/opt/maven
 mkdir -p ${MVN_DIR}
 wget http://mirror.sdunix.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
 unzip apache-maven-3.2.5-bin.zip
@@ -69,7 +68,7 @@ mv apache-maven-3.2.5 ${MVN_DIR}/3.2.5
 ln -s -f ${MVN_DIR}/3.2.5/bin/mvn $HOME/bin/mvn
 rm apache-maven-3.2.5-bin.zip
 
-local SBT_DIR=$HOME/usr/local/sbt
+local SBT_DIR=$HOME/opt/sbt
 mkdir -p ${SBT_DIR}
 wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.7/sbt-0.13.7.tgz
 tar xzf sbt-0.13.7.tgz
@@ -77,7 +76,7 @@ mv sbt ${SBT_DIR}/0.13.7
 ln -s -f ${SBT_DIR}/0.13.7/bin/sbt $HOME/bin/sbt
 rm sbt-0.13.7.tgz
 
-local GRADLE_DIR=$HOME/usr/local/gradle
+local GRADLE_DIR=$HOME/opt/gradle
 mkdir -p ${GRADLE_DIR}
 wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
 unzip gradle-2.3-bin.zip
