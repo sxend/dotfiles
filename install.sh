@@ -18,7 +18,7 @@ mkdir -p $HOME/var/log
 cd $HOME/tmp
 
 # update apt
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get -y update
 # sudo apt-get -y upgrade
 
