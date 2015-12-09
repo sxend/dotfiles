@@ -23,7 +23,7 @@ sudo apt-get -y update
 # sudo apt-get -y upgrade
 
 # install basic packages
-sudo apt-get -y install wget vim zsh git unzip
+sudo apt-get -y install wget vim zsh git unzip build-essential
 
 # change login shell
 [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
