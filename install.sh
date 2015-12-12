@@ -71,11 +71,11 @@ rm apache-maven-3.2.5-bin.zip
 
 local SBT_DIR=$HOME/opt/sbt
 mkdir -p ${SBT_DIR}
-wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.7/sbt-0.13.7.tgz
-tar xzf sbt-0.13.7.tgz
-mv sbt ${SBT_DIR}/0.13.7
-ln -s -f ${SBT_DIR}/0.13.7/bin/sbt $HOME/bin/sbt
-rm sbt-0.13.7.tgz
+wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.9/sbt-0.13.9.tgz
+tar xzf sbt-0.13.9.tgz
+mv sbt ${SBT_DIR}/0.13.9
+ln -s -f ${SBT_DIR}/0.13.9/bin/sbt $HOME/bin/sbt
+rm sbt-0.13.9.tgz
 
 local GRADLE_DIR=$HOME/opt/gradle
 mkdir -p ${GRADLE_DIR}
