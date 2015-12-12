@@ -63,11 +63,11 @@ sudo apt-get -y install docker.io apparmor
 
 local MVN_DIR=$HOME/opt/maven
 mkdir -p ${MVN_DIR}
-wget http://mirror.sdunix.com/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip
-unzip apache-maven-3.2.5-bin.zip
-mv apache-maven-3.2.5 ${MVN_DIR}/3.2.5
-ln -s -f ${MVN_DIR}/3.2.5/bin/mvn $HOME/bin/mvn
-rm apache-maven-3.2.5-bin.zip
+wget http://www.us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
+unzip apache-maven-3.3.9-bin.zip
+mv apache-maven-3.3.9 ${MVN_DIR}/3.3.9
+ln -s -f ${MVN_DIR}/3.3.9/bin/mvn $HOME/bin/mvn
+rm apache-maven-3.3.9-bin.zip
 
 local SBT_DIR=$HOME/opt/sbt
 mkdir -p ${SBT_DIR}
