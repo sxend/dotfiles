@@ -56,7 +56,7 @@ sudo apt-get -y install tig
 # sudo apt-get -y install oracle-java8-installer
 
 # install nvm
-curl --insecure https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
+curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 
 # install docker
 sudo apt-get -y install docker.io apparmor
