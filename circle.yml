@@ -3,4 +3,4 @@ machine:
     - docker
 test:
   override:
-    - docker run -it sxend/ubuntu14.04:latest /bin/bash -c 'curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/master/install.sh | bash'
+    - docker run -it sxend/ubuntu14.04:latest /bin/bash -c 'curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/${CIRCLE_SHA1}/install.sh | bash'
