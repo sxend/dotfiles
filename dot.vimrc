@@ -24,7 +24,7 @@ if has('vim_starting')
  NeoBundle 'rails.vim'
  NeoBundle 'scala.vim', 
  " Non github repos
- NeoBundle 'git://git.wincent.com/command-t.git'
+ NeoBundle 'wincent/command-t'
  " gist repos
  " NeoBundle 'gist:Shougo/656148', {'name':'everything.vim','script_type':'plugin'}
  " Non git repos
