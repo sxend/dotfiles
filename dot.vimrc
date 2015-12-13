@@ -22,7 +22,8 @@ if has('vim_starting')
  NeoBundle 'L9'
  NeoBundle 'FuzzyFinder'
  NeoBundle 'rails.vim'
- NeoBundle 'scala.vim', 
+ NeoBundle 'scala.vim'
+ NeoBundle 'derekwyatt/vim-scala'
  " Non github repos
  NeoBundle 'wincent/command-t'
  " gist repos

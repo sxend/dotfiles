@@ -47,6 +47,8 @@ ln -s -f $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
 ln -s -f $HOME/share/dotfiles/dot.zshrc.include $HOME/.zshrc.include
 ln -s -f $HOME/share/dotfiles/dot.vimrc $HOME/.vimrc
 ln -s -f $HOME/share/dotfiles/dot.gitconfig $HOME/.gitconfig
+mkdir -p $HOME/.vim
+ln -s -f $HOME/share/dotfiles/dot.vim/filetype.vim $HOME/.vim/filetype.vim
 
 # tig (git client) install
 sudo apt-get -y install tig
