@@ -104,3 +104,4 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 set t_Co=256
 set background=dark
+command! E Explore
