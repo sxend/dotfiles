@@ -39,6 +39,7 @@ source $HOME/.nvm/nvm.sh
 
 # alias
 alias ll='ls -alF --color=auto'
+alias v=vim
 
 # prepare PATH
 EXPORTS+=($PATH)
