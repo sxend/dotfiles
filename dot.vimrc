@@ -1,50 +1,27 @@
 if has('vim_starting')
-   set nocompatible               " Be iMproved
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set nocompatible " Be iMproved
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Recommended to install
-" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-" NeoBundle 'Shougo/vimproc'
-
-" My Bundles here:
-"
-" Note: You don't set neobundle setting in .gvimrc!
-" Original repos on github
+NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'scala.vim'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Lokaltog/vim-easymotion', '09c0cea8'   " This plugin is locked at revision 09c0cea8 
+NeoBundle 'Lokaltog/vim-easymotion', '09c0cea8' " This plugin is locked at revision 09c0cea8 
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
+
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
-NeoBundle 'rails.vim'
-NeoBundle 'scala.vim'
-NeoBundle 'derekwyatt/vim-scala'
-" Non github repos
 NeoBundle 'wincent/command-t'
-" gist repos
-" NeoBundle 'gist:Shougo/656148', {'name':'everything.vim','script_type':'plugin'}
-" Non git repos
-" ...
- 
+
 NeoBundle 'jiangmiao/simple-javascript-indenter'
 
 NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
-NeoBundle 'Shougo/neocomplcache.vim'
-
-" ...
-
-filetype plugin indent on     " Required!
-"
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+filetype plugin indent on
 
 call neobundle#end()
 " Installation check.
@@ -72,16 +49,16 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Enable heavy features.
 " Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_camel_case_completion = 1
 " Use underbar completion.
-"let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = { 'default' : '', 'vimshell' : $HOME.'/.vimshell_hist', 'scheme' : $HOME.'/.gosh_completions' }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+  let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
@@ -104,27 +81,7 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
-
-" For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-"inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-"inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
-" Or set this.
-"let g:neocomplcache_enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplcache_enable_insert_char_pre = 1
-
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+let g:neocomplcache_enable_auto_select = 1
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS

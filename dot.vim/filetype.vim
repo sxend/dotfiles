@@ -3,6 +3,6 @@
 "
 augroup filetypedetect
 " Detect .txt as 'text'
-  autocmd! BufNewFile,BufRead *.txt setfiletype text
-  autocmd! BufNewFile,BufRead *.scala setfiletype scala
+  au BufNewFile,BufRead *.txt setf text
+  au BufNewFile,BufRead *.scala setf scala
 augroup END
