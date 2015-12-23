@@ -1,64 +1,64 @@
 if has('vim_starting')
    set nocompatible               " Be iMproved
    set runtimepath+=~/.vim/bundle/neobundle.vim/
- endif
+endif
 
- call neobundle#begin(expand('~/.vim/bundle/'))
- " Let NeoBundle manage NeoBundle
- NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#begin(expand('~/.vim/bundle/'))
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
- " Recommended to install
- " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
- " NeoBundle 'Shougo/vimproc'
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+" NeoBundle 'Shougo/vimproc'
 
- " My Bundles here:
- "
- " Note: You don't set neobundle setting in .gvimrc!
- " Original repos on github
- NeoBundle 'tpope/vim-fugitive'
- NeoBundle 'Lokaltog/vim-easymotion', '09c0cea8'   " This plugin is locked at revision 09c0cea8 
- NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- " vim-scripts repos
- NeoBundle 'L9'
- NeoBundle 'FuzzyFinder'
- NeoBundle 'rails.vim'
- NeoBundle 'scala.vim'
- NeoBundle 'derekwyatt/vim-scala'
- " Non github repos
- NeoBundle 'wincent/command-t'
- " gist repos
- " NeoBundle 'gist:Shougo/656148', {'name':'everything.vim','script_type':'plugin'}
- " Non git repos
- " ...
+" My Bundles here:
+"
+" Note: You don't set neobundle setting in .gvimrc!
+" Original repos on github
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Lokaltog/vim-easymotion', '09c0cea8'   " This plugin is locked at revision 09c0cea8 
+NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" vim-scripts repos
+NeoBundle 'L9'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'rails.vim'
+NeoBundle 'scala.vim'
+NeoBundle 'derekwyatt/vim-scala'
+" Non github repos
+NeoBundle 'wincent/command-t'
+" gist repos
+" NeoBundle 'gist:Shougo/656148', {'name':'everything.vim','script_type':'plugin'}
+" Non git repos
+" ...
  
- NeoBundle 'jiangmiao/simple-javascript-indenter'
+NeoBundle 'jiangmiao/simple-javascript-indenter'
 
- NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
- NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/neocomplcache.vim'
 
- " ...
+" ...
 
- filetype plugin indent on     " Required!
- "
- " Brief help
- " :NeoBundleList          - list configured bundles
- " :NeoBundleInstall(!)    - install(update) bundles
- " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+filetype plugin indent on     " Required!
+"
+" Brief help
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
- call neobundle#end()
- " Installation check.
- NeoBundleCheck
+call neobundle#end()
+" Installation check.
+NeoBundleCheck
 
- set number "行番号を表示する
- set notitle
- set showmatch "括弧入力時の対応する括弧を表示
- syntax on "コードの色分け
- set tabstop=2 "インデントをスペース2つ分に設定
- set shiftwidth=2
- set expandtab
- set smartindent "オートインデント
- let g:jscomplete_use = ['dom', 'moz', 'es6th']
+set number "行番号を表示する
+set notitle
+set showmatch "括弧入力時の対応する括弧を表示
+syntax on "コードの色分け
+set tabstop=2 "インデントをスペース2つ分に設定
+set shiftwidth=2
+set expandtab
+set smartindent "オートインデント
+let g:jscomplete_use = ['dom', 'moz', 'es6th']
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -77,11 +77,7 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 "let g:neocomplcache_enable_underbar_completion = 1
 
 " Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+let g:neocomplcache_dictionary_filetype_lists = { 'default' : '', 'vimshell' : $HOME.'/.vimshell_hist', 'scheme' : $HOME.'/.gosh_completions' }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
