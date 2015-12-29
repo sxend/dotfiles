@@ -61,7 +61,8 @@ sudo apt-get -y install tig
 curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 
 # install docker
-sudo apt-get -y install docker.io apparmor
+# sudo apt-get -y install docker.io apparmor
+wget -qO- https://get.docker.com/ | sh
 
 local MVN_DIR=$HOME/opt/maven
 mkdir -p ${MVN_DIR}
