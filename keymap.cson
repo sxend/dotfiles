@@ -1,0 +1,10 @@
+'atom-workspace':
+  'ctrl-alt-s': 'scala-format:format'
+'.editor':
+  'ctrl-alt-b': 'atom-beautify:beautify-editor'
+'atom-text-editor:not([mini])':
+  'ctrl-d': 'editor:delete-line'
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'ctrl-shift-K': 'find-and-replace:select-next'
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-y': 'editor:duplicate-lines'
