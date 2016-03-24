@@ -30,7 +30,7 @@ sudo apt-get -y install wget vim zsh git unzip build-essential
 
 # clone dotfiles
 if [ -e $HOME/share/dotfiles ]; then
-  cd $HOME/share/dotfiles && git pull origin master && cd $HOME/tmp 
+  cd $HOME/share/dotfiles && git pull origin master && cd $HOME/tmp
 else
   git clone https://github.com/sxend/dotfiles.git $HOME/share/dotfiles
 fi
@@ -74,11 +74,11 @@ rm apache-maven-3.3.9-bin.zip
 
 local SBT_DIR=$HOME/opt/sbt
 mkdir -p ${SBT_DIR}
-wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.9/sbt-0.13.9.tgz
-tar xzf sbt-0.13.9.tgz
-mv sbt ${SBT_DIR}/0.13.9
-ln -s -f ${SBT_DIR}/0.13.9/bin/sbt $HOME/bin/sbt
-rm sbt-0.13.9.tgz
+wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.11/sbt-0.13.11.tgz
+tar xzf sbt-0.13.11.tgz
+mv sbt ${SBT_DIR}/0.13.11
+ln -s -f ${SBT_DIR}/0.13.11/bin/sbt $HOME/bin/sbt
+rm sbt-0.13.11.tgz
 
 local GRADLE_DIR=$HOME/opt/gradle
 mkdir -p ${GRADLE_DIR}
