@@ -64,6 +64,10 @@ curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/ins
 # sudo apt-get -y install docker.io apparmor
 wget -qO- https://get.docker.com/ | sh
 
+cp $HOME/share/dotfiles/bin/* $HOME/bin/
+
+openssl req -new -x509 -keyout $HOME/share/certs/insecure_server.pem -out $HOME/share/certs/insecure_server.pem -days 365 -nodes -subj '/C=JP/ST=Tokyo'
+
 local MVN_DIR=$HOME/opt/maven
 mkdir -p ${MVN_DIR}
 wget http://www.us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
