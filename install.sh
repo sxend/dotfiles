@@ -65,7 +65,7 @@ curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/ins
 wget -qO- https://get.docker.com/ | sh
 
 cp $HOME/share/dotfiles/bin/* $HOME/bin/
-
+mkdir -p $HOME/share/certs
 openssl req -new -x509 -keyout $HOME/share/certs/insecure_server.pem -out $HOME/share/certs/insecure_server.pem -days 365 -nodes -subj '/C=JP/ST=Tokyo'
 
 local MVN_DIR=$HOME/opt/maven
