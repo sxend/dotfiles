@@ -111,7 +111,7 @@ unzip $HOME/tmp/Ricty/Inconsolata.zip
 wget -O $HOME/tmp/Ricty/ricty_generator.sh http://www.rs.tus.ac.jp/yyusa/ricty/ricty_generator.sh
 chmod 755 $HOME/tmp/Ricty/ricty_generator.sh
 $HOME/tmp/Ricty/ricty_generator.sh auto
-cd $HOME/tmp/Ricty/*.ttf $HOME/.fonts/Ricty/
+cp $HOME/tmp/Ricty/Ricty*.ttf $HOME/.fonts/Ricty/
 fc-cache -vf
 rm -rf $HOME/tmp/Ricty
 
