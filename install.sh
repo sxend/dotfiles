@@ -94,7 +94,7 @@ rm gradle-2.9-bin.zip
 
 # Ricty install
 mkdir -p $HOME/.fonts/migu-1m
-sudo apt-get install -y fontforge fonts-inconsolata
+sudo apt-get install -y fontforge fonts-inconsolata unzip
 wget http://jaist.dl.sourceforge.jp/mix-mplus-ipa/59022/migu-1m-20130617.zip
 unzip migu-1m-20130617.zip
 mv migu-1m-20130617/*.ttf $HOME/.fonts/migu-1m
@@ -103,10 +103,17 @@ rm -rf migu-1m-20130617.zip
 rm -rf migu-1m-20130617
 
 mkdir -p $HOME/.fonts/Ricty
-git clone -b 3.2.4 https://github.com/yascentur/Ricty.git
-cd Ricty && ./ricty_generator.sh auto && cp -f Ricty*.ttf $HOME/.fonts/Ricty && cd $HOME/tmp
+mkdir -p $HOME/tmp/Ricty
+cd $HOME/tmp/Ricty
+cp $HOME/.fonts/migu-1m/*.ttf $HOME/tmp/Ricty/
+wget -O $HOME/tmp/Ricty/Inconsolata.zip https://www.google.com/fonts/download?kit=CNj0Ze1H6w4FVgc32wmZS4fD-WQWLbF4rYwcBGowFYY
+unzip $HOME/tmp/Ricty/Inconsolata.zip
+wget -O $HOME/tmp/Ricty/ricty_generator.sh http://www.rs.tus.ac.jp/yyusa/ricty/ricty_generator.sh
+chmod 755 $HOME/tmp/Ricty/ricty_generator.sh
+$HOME/tmp/Ricty/ricty_generator.sh auto
+cd $HOME/tmp/Ricty/*.ttf $HOME/.fonts/Ricty/
 fc-cache -vf
-rm -rf Ricty/
+rm -rf $HOME/tmp/Ricty
 
 }
 
