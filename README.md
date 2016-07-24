@@ -17,3 +17,16 @@ apm install atom-beautify atom-ctags atom-scalariform atom-typescript autocomple
 
 rm atom.deb
 ```
+
+#### atom keybinding
+```
+'atom-text-editor:not([mini])':
+  'ctrl-d': 'editor:delete-line'
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-y': 'editor:duplicate-lines'
+  'cmd-w': 'editor:select-word'
+'body':
+  'cmd-shift-l': 'pane:show-next-item'
+  'cmd-shift-h': 'pane:show-previous-item'
+
+```
