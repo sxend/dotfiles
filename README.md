@@ -24,7 +24,8 @@ rm atom.deb
   'ctrl-d': 'editor:delete-line'
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-y': 'editor:duplicate-lines'
-  'cmd-w': 'editor:select-word'
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'cmd-w': 'find-and-replace:select-next'
 'body':
   'cmd-shift-l': 'pane:show-next-item'
   'cmd-shift-h': 'pane:show-previous-item'
