@@ -60,6 +60,9 @@ sudo apt-get -y install tig
 # install nvm
 curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
 
+# setup rust environment
+curl --insecure https://sh.rustup.rs -sSf | sh
+
 # install docker
 # sudo apt-get -y install docker.io apparmor
 wget -qO- https://get.docker.com/ | sh
