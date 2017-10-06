@@ -80,12 +80,13 @@ ln -s -f ${MVN_DIR}/3.3.9/bin/mvn $HOME/bin/mvn
 rm apache-maven-3.3.9-bin.zip
 
 local SBT_DIR=$HOME/opt/sbt
+local SBT_VERSION=1.0.2
 mkdir -p ${SBT_DIR}
-wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.11/sbt-0.13.11.tgz
-tar xzf sbt-0.13.11.tgz
-mv sbt ${SBT_DIR}/0.13.11
-ln -s -f ${SBT_DIR}/0.13.11/bin/sbt $HOME/bin/sbt
-rm sbt-0.13.11.tgz
+wget https://github.com/sbt/sbt/releases/download/v${SBT_VERSION}/sbt-${SBT_VERSION}.tgz
+tar xzf sbt-${SBT_VERSION}.tgz
+mv sbt ${SBT_DIR}/${SBT_VERSION}
+ln -s -f ${SBT_DIR}/${SBT_VERSION}/bin/sbt $HOME/bin/sbt
+rm sbt-${SBT_VERSION}.tgz
 
 local GRADLE_DIR=$HOME/opt/gradle
 mkdir -p ${GRADLE_DIR}
