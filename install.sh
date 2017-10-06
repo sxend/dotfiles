@@ -89,12 +89,13 @@ ln -s -f ${SBT_DIR}/${SBT_VERSION}/bin/sbt $HOME/bin/sbt
 rm sbt-${SBT_VERSION}.tgz
 
 local GRADLE_DIR=$HOME/opt/gradle
+local GRADLE_VERSION=4.2.1
 mkdir -p ${GRADLE_DIR}
-wget https://services.gradle.org/distributions/gradle-2.9-bin.zip
-unzip gradle-2.9-bin.zip
-mv gradle-2.9 ${GRADLE_DIR}/2.9
-ln -s -f ${GRADLE_DIR}/2.9/bin/gradle $HOME/bin/gradle
-rm gradle-2.9-bin.zip
+wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
+unzip gradle-${GRADLE_VERSION}-bin.zip
+mv gradle-${GRADLE_VERSION} ${GRADLE_DIR}/${GRADLE_VERSION}
+ln -s -f ${GRADLE_DIR}/${GRADLE_VERSION}/bin/gradle $HOME/bin/gradle
+rm gradle-${GRADLE_VERSION}-bin.zip
 
 # Ricty install
 mkdir -p $HOME/.fonts/migu-1m
