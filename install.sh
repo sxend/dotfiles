@@ -72,12 +72,13 @@ mkdir -p $HOME/share/certs
 openssl req -new -x509 -keyout $HOME/share/certs/insecure_server.pem -out $HOME/share/certs/insecure_server.pem -days 365 -nodes -subj '/C=JP/ST=Tokyo'
 
 local MVN_DIR=$HOME/opt/maven
+local MVN_VERSION=3.5.0
 mkdir -p ${MVN_DIR}
-wget http://www.us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
-unzip apache-maven-3.3.9-bin.zip
-mv apache-maven-3.3.9 ${MVN_DIR}/3.3.9
-ln -s -f ${MVN_DIR}/3.3.9/bin/mvn $HOME/bin/mvn
-rm apache-maven-3.3.9-bin.zip
+wget http://www.us.apache.org/dist/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.zip
+unzip apache-maven-${MVN_VERSION}-bin.zip
+mv apache-maven-${MVN_VERSION} ${MVN_DIR}/${MVN_VERSION}
+ln -s -f ${MVN_DIR}/${MVN_VERSION}/bin/mvn $HOME/bin/mvn
+rm apache-maven-${MVN_VERSION}-bin.zip
 
 local SBT_DIR=$HOME/opt/sbt
 local SBT_VERSION=1.0.2
