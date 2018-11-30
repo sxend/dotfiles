@@ -19,11 +19,15 @@ cd $HOME/tmp
 
 # update apt
 sudo add-apt-repository -y ppa:webupd8team/java
+TEMP_DEB="$(mktemp)" && \
+  wget -O "$TEMP_DEB" 'https://update.code.visualstudio.com/latest/linux-deb-x64/stable' && \
+  sudo dpkg -i "$TEMP_DEB" && \
+  rm -f "$TEMP_DEB"
 sudo apt-get -y update
 # sudo apt-get -y upgrade
 
 # install basic packages
-sudo apt-get -y install wget vim zsh git unzip build-essential
+sudo apt-get -y install wget vim zsh git unzip build-essential code
 
 # change login shell
 [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
@@ -41,7 +45,6 @@ if [ -e $HOME/.vim/bundle/neobundle.vim ]; then
 else
   git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 fi
-
 
 ln -s -f $HOME/share/dotfiles/dot.zshrc $HOME/.zshrc
 ln -s -f $HOME/share/dotfiles/dot.zshrc.include $HOME/.zshrc.include
