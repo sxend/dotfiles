@@ -23,11 +23,11 @@ sudo apt-get -y update
 # sudo apt-get -y upgrade
 
 # install basic packages
-sudo apt-get -y install wget vim zsh git unzip build-essential
+sudo apt-get -y install wget vim zsh git unzip build-essential gdebi
 
 TEMP_DEB="$(mktemp)" && \
   wget -O "$TEMP_DEB" 'https://update.code.visualstudio.com/latest/linux-deb-x64/stable' && \
-  sudo dpkg -i "$TEMP_DEB" && \
+  sudo gdebi "$TEMP_DEB" && \
   rm -f "$TEMP_DEB"
 sudo apt-get update -y
 sudo apt-get install -y code
