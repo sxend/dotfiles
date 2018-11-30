@@ -10,7 +10,7 @@ mkdir -p $HOME/workspace
 mkdir -p $HOME/share
 mkdir -p $HOME/tmp
 mkdir -p $HOME/opt
-mkdir -p $HOME/var
+# mkdir -p $HOME/var
 mkdir -p $HOME/downloads
 
 mkdir -p $HOME/var/log
@@ -58,14 +58,14 @@ sudo apt-get -y install tig
 # sudo apt-get -y install oracle-java8-installer
 
 # install nvm
-curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 # setup rust environment
 curl --insecure https://sh.rustup.rs -sSf | sh
 
 # install docker
-# sudo apt-get -y install docker.io apparmor
 wget -qO- https://get.docker.com/ | sh
+sudo usermod -aG docker `whoami`
 
 cp $HOME/share/dotfiles/bin/* $HOME/bin/
 mkdir -p $HOME/share/certs
@@ -81,7 +81,7 @@ ln -s -f ${MVN_DIR}/${MVN_VERSION}/bin/mvn $HOME/bin/mvn
 rm apache-maven-${MVN_VERSION}-bin.zip
 
 local SBT_DIR=$HOME/opt/sbt
-local SBT_VERSION=1.0.2
+local SBT_VERSION=1.2.6
 mkdir -p ${SBT_DIR}
 wget https://github.com/sbt/sbt/releases/download/v${SBT_VERSION}/sbt-${SBT_VERSION}.tgz
 tar xzf sbt-${SBT_VERSION}.tgz
@@ -90,7 +90,7 @@ ln -s -f ${SBT_DIR}/${SBT_VERSION}/bin/sbt $HOME/bin/sbt
 rm sbt-${SBT_VERSION}.tgz
 
 local GRADLE_DIR=$HOME/opt/gradle
-local GRADLE_VERSION=4.2.1
+local GRADLE_VERSION=5.0
 mkdir -p ${GRADLE_DIR}
 wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
 unzip gradle-${GRADLE_VERSION}-bin.zip
