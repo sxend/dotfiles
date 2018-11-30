@@ -29,8 +29,6 @@ TEMP_DEB="$(mktemp)" && \
   wget -O "$TEMP_DEB" 'https://update.code.visualstudio.com/latest/linux-deb-x64/stable' && \
   sudo gdebi "$TEMP_DEB" && \
   rm -f "$TEMP_DEB"
-sudo apt-get update -y
-sudo apt-get install -y code
 
 # change login shell
 [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
