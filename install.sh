@@ -19,15 +19,18 @@ cd $HOME/tmp
 
 # update apt
 sudo add-apt-repository -y ppa:webupd8team/java
-TEMP_DEB="$(mktemp)" && \
-  wget -O "$TEMP_DEB" 'https://update.code.visualstudio.com/latest/linux-deb-x64/stable' && \
-  sudo dpkg -i "$TEMP_DEB" && \
-  rm -f "$TEMP_DEB"
 sudo apt-get -y update
 # sudo apt-get -y upgrade
 
 # install basic packages
-sudo apt-get -y install wget vim zsh git unzip build-essential code
+sudo apt-get -y install wget vim zsh git unzip build-essential
+
+TEMP_DEB="$(mktemp)" && \
+  wget -O "$TEMP_DEB" 'https://update.code.visualstudio.com/latest/linux-deb-x64/stable' && \
+  sudo dpkg -i "$TEMP_DEB" && \
+  rm -f "$TEMP_DEB"
+sudo apt-get update -y
+sudo apt-get install -y code
 
 # change login shell
 [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
