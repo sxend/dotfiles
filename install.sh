@@ -65,7 +65,7 @@ sudo apt-get -y install tig
 curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 # setup rust environment
-curl --insecure https://sh.rustup.rs -sSf | sh
+# curl --insecure https://sh.rustup.rs -sSf | sh
 
 # install docker
 wget -qO- https://get.docker.com/ | sh
@@ -76,7 +76,7 @@ mkdir -p $HOME/share/certs
 openssl req -new -x509 -keyout $HOME/share/certs/insecure_server.pem -out $HOME/share/certs/insecure_server.pem -days 365 -nodes -subj '/C=JP/ST=Tokyo'
 
 local MVN_DIR=$HOME/opt/maven
-local MVN_VERSION=3.5.0
+local MVN_VERSION=3.6.0
 mkdir -p ${MVN_DIR}
 wget http://www.us.apache.org/dist/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.zip
 unzip apache-maven-${MVN_VERSION}-bin.zip
