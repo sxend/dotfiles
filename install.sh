@@ -32,6 +32,13 @@ do_install() {
     sudo gdebi "$TEMP_DEB" && \
     rm -f "$TEMP_DEB"
 
+  local IDEA_DIR=$HOME/opt/idea
+  mkdir -p ${IDEA_DIR}
+  local IDEA_VERSION=ideaIU-2018.3.1
+  wget -O ./${IDEA_VERSION}.tar.gz https://download.jetbrains.com/idea/${IDEA_VERSION}-no-jdk.tar.gz
+  tar xzf ./${IDEA_VERSION}.tar.gz -C ${IDEA_DIR}
+  ln -s -f $(bash -c 'ls $HOME/opt/idea | sort | tail -1')/bin/idea.sh $HOME/bin/idea.sh
+
   # change login shell
   [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
 
