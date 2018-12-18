@@ -23,7 +23,6 @@ do_install() {
 
   # update apt
   sudo apt-get -y update
-  # sudo apt-get -y upgrade
 
   # install basic packages
   sudo apt-get -y install wget curl vim zsh git unzip build-essential gdebi
@@ -131,6 +130,7 @@ do_install() {
   fc-cache -vf
   rm -rf $HOME/tmp/Ricty
 
+  sudo apt-get -y upgrade
 }
 
 do_install
