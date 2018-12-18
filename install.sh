@@ -68,6 +68,10 @@ do_install() {
 
   # setup rust environment
   curl --insecure https://sh.rustup.rs -sSf | sh
+  echo 'export PATH=$PATH:$HOME/.cargo/bin' >> $HOME/.zshrc.include
+  $HOME/.cargo/bin/rustup component add rustfmt
+  $HOME/.cargo/bin/rustup component add clippy
+  $HOME/.cargo/bin/rustup target add x86_64-unknown-linux-musl
 
   # install docker
   wget -qO- https://get.docker.com/ | sh
