@@ -18,12 +18,11 @@ mkdir -p $HOME/var/log
 cd $HOME/tmp
 
 # update apt
-sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get -y update
 # sudo apt-get -y upgrade
 
 # install basic packages
-sudo apt-get -y install wget vim zsh git unzip build-essential gdebi
+sudo apt-get -y install wget curl vim zsh git unzip build-essential gdebi
 
 TEMP_DEB="$(mktemp)" && \
   wget -O "$TEMP_DEB" 'https://update.code.visualstudio.com/latest/linux-deb-x64/stable' && \
@@ -57,15 +56,14 @@ ln -s -f $HOME/share/dotfiles/dot.vim/filetype.vim $HOME/.vim/filetype.vim
 # tig (git client) install
 sudo apt-get -y install tig
 
-# install oracle jdk
-# sudo apt-get -y install oracle-java7-installer
-# sudo apt-get -y install oracle-java8-installer
+# install java version manager
+curl --insecure -sL https://raw.githubusercontent.com/shyiko/jabba/0.11.1/install.sh | bash && . ~/.jabba/jabba.sh
 
 # install nvm
 curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 # setup rust environment
-# curl --insecure https://sh.rustup.rs -sSf | sh
+curl --insecure https://sh.rustup.rs -sSf | sh
 
 # install docker
 wget -qO- https://get.docker.com/ | sh
@@ -85,7 +83,7 @@ ln -s -f ${MVN_DIR}/${MVN_VERSION}/bin/mvn $HOME/bin/mvn
 rm apache-maven-${MVN_VERSION}-bin.zip
 
 local SBT_DIR=$HOME/opt/sbt
-local SBT_VERSION=1.2.6
+local SBT_VERSION=1.2.7
 mkdir -p ${SBT_DIR}
 wget https://github.com/sbt/sbt/releases/download/v${SBT_VERSION}/sbt-${SBT_VERSION}.tgz
 tar xzf sbt-${SBT_VERSION}.tgz
