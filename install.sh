@@ -73,7 +73,7 @@ do_install() {
   curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
   # setup rust environment
-  curl --insecure https://sh.rustup.rs -sSf | sh
+  curl --insecure https://sh.rustup.rs -sSf | sh -s -- -y
   echo 'export PATH=$PATH:$HOME/.cargo/bin' >> $HOME/.zshrc.include
   $HOME/.cargo/bin/rustup component add rustfmt
   $HOME/.cargo/bin/rustup component add clippy
