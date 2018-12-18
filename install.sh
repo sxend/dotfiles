@@ -37,7 +37,7 @@ do_install() {
   local IDEA_VERSION=ideaIU-2018.3.1
   wget -O ./${IDEA_VERSION}.tar.gz https://download.jetbrains.com/idea/${IDEA_VERSION}-no-jdk.tar.gz
   tar xzf ./${IDEA_VERSION}.tar.gz -C ${IDEA_DIR}
-  ln -s -f $(bash -c 'ls $HOME/opt/idea | sort | tail -1')/bin/idea.sh $HOME/bin/idea.sh
+  ln -s -f ${IDEA_DIR}/$(bash -c 'ls $HOME/opt/idea | sort | tail -1')/bin/idea.sh $HOME/bin/idea.sh
 
   # change login shell
   [ `basename $SHELL` != "zsh" ] && chsh -s `which zsh` && echo "please reboot or re-login"
