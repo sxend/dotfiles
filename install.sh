@@ -78,6 +78,7 @@ do_install() {
   $HOME/.cargo/bin/rustup component add rustfmt
   $HOME/.cargo/bin/rustup component add clippy
   $HOME/.cargo/bin/rustup target add x86_64-unknown-linux-musl
+  $HOME/.cargo/bin/cargo install cargo-edit
 
   # install docker
   wget -qO- https://get.docker.com/ | sh
