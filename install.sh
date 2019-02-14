@@ -25,7 +25,7 @@ do_install() {
   sudo apt-get -y update
 
   # install basic packages
-  sudo apt-get -y install wget curl vim zsh git unzip build-essential gdebi
+  sudo apt-get -y install wget curl vim zsh git unzip build-essential gdebi pkg-config libssl-dev
 
   TEMP_DEB="$(mktemp)" && \
     wget -O "$TEMP_DEB" 'https://update.code.visualstudio.com/latest/linux-deb-x64/stable' && \
