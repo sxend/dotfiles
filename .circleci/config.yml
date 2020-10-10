@@ -1,9 +1,10 @@
 version: 2.1
 jobs:
   build:
-    - checkout
-    - run:
-        command: docker run -it ubuntu:20.04 /bin/bash -c "curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/${CIRCLE_SHA1}/install.sh | bash"
+    steps:
+      - checkout
+      - run:
+          command: docker run -it ubuntu:20.04 /bin/bash -c "curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/${CIRCLE_SHA1}/install.sh | bash"
 workflows:
   build:
     jobs:
