@@ -132,7 +132,7 @@ do_install() {
   cp $HOME/.fonts/migu-1m/*.ttf $HOME/tmp/Ricty/
   wget -O $HOME/tmp/Ricty/Inconsolata.zip https://www.google.com/fonts/download?kit=CNj0Ze1H6w4FVgc32wmZS4fD-WQWLbF4rYwcBGowFYY
   unzip $HOME/tmp/Ricty/Inconsolata.zip
-  wget -O $HOME/tmp/Ricty/ricty_generator.sh http://www.rs.tus.ac.jp/yyusa/ricty/ricty_generator.sh
+  wget -O $HOME/tmp/Ricty/ricty_generator.sh https://rictyfonts.github.io/files/ricty_generator.sh
   chmod 755 $HOME/tmp/Ricty/ricty_generator.sh
   $HOME/tmp/Ricty/ricty_generator.sh auto
   cp $HOME/tmp/Ricty/Ricty*.ttf $HOME/.fonts/Ricty/
