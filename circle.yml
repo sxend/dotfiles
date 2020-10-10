@@ -1,6 +1,0 @@
-machine:
-  services:
-    - docker
-test:
-  override:
-    - docker run -it sxend/ubuntu:18.04.0 /bin/bash -c "curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/${CIRCLE_SHA1}/install.sh | bash"
