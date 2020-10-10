@@ -34,8 +34,9 @@ do_install() {
 
   local IDEA_DIR=$HOME/opt/idea
   mkdir -p ${IDEA_DIR}
-  local IDEA_VERSION=ideaIU-2018.3.1
-  wget -O ./${IDEA_VERSION}.tar.gz https://download.jetbrains.com/idea/${IDEA_VERSION}-no-jdk.tar.gz
+  local IDEA_VERSION=ideaIU-2020.2.3
+  
+  wget -O ./${IDEA_VERSION}.tar.gz https://download-cf.jetbrains.com/idea/${IDEA_VERSION}.tar.gz
   tar xzf ./${IDEA_VERSION}.tar.gz -C ${IDEA_DIR}
   ln -v -s -f ${IDEA_DIR}/$(bash -c 'ls $HOME/opt/idea | sort | tail -1')/bin/idea.sh $HOME/bin/idea.sh
 
