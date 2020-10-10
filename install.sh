@@ -68,10 +68,10 @@ do_install() {
   sudo apt-get -y install tig
 
   # install java version manager
-  curl --insecure -sL https://raw.githubusercontent.com/shyiko/jabba/0.11.1/install.sh | bash && . ~/.jabba/jabba.sh
+  curl --insecure -sL https://raw.githubusercontent.com/shyiko/jabba/0.11.2/install.sh | bash && . ~/.jabba/jabba.sh
 
   # install nvm
-  curl --insecure -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+  curl --insecure -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 
   # setup rust environment
   curl --insecure https://sh.rustup.rs -sSf | sh -s -- -y
