@@ -4,7 +4,6 @@ jobs:
     machine:
       image: ubuntu-2004:202008-01
     steps:
-      - checkout
       - run:
           command: docker run -it ubuntu:20.04 /bin/bash -c "curl --insecure https://raw.githubusercontent.com/sxend/dotfiles/${CIRCLE_SHA1}/install.sh | bash"
 workflows:
