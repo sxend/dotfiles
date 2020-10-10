@@ -90,7 +90,7 @@ do_install() {
   openssl req -new -x509 -keyout $HOME/share/certs/insecure_server.pem -out $HOME/share/certs/insecure_server.pem -days 365 -nodes -subj '/C=JP/ST=Tokyo'
 
   local MVN_DIR=$HOME/opt/maven
-  local MVN_VERSION=3.6.0
+  local MVN_VERSION=3.6.3
   mkdir -p ${MVN_DIR}
   wget http://www.us.apache.org/dist/maven/maven-3/${MVN_VERSION}/binaries/apache-maven-${MVN_VERSION}-bin.zip
   unzip apache-maven-${MVN_VERSION}-bin.zip
@@ -99,7 +99,7 @@ do_install() {
   rm apache-maven-${MVN_VERSION}-bin.zip
 
   local SBT_DIR=$HOME/opt/sbt
-  local SBT_VERSION=1.2.7
+  local SBT_VERSION=1.4.0
   mkdir -p ${SBT_DIR}
   wget https://github.com/sbt/sbt/releases/download/v${SBT_VERSION}/sbt-${SBT_VERSION}.tgz
   tar xzf sbt-${SBT_VERSION}.tgz
@@ -108,7 +108,7 @@ do_install() {
   rm sbt-${SBT_VERSION}.tgz
 
   local GRADLE_DIR=$HOME/opt/gradle
-  local GRADLE_VERSION=5.0
+  local GRADLE_VERSION=6.6.1
   mkdir -p ${GRADLE_DIR}
   wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
   unzip gradle-${GRADLE_VERSION}-bin.zip
